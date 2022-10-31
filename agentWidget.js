@@ -36,5 +36,9 @@ var notifyWhenDone = function(err) {
     }
     console.log("set the value");
 };
+var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
+    var data = {text: "Some text"};
+
+    lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
 var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
