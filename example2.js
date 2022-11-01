@@ -1,16 +1,27 @@
-
+//document.getElementById("demo").innerHTML = myFunction("Siri");
 // value in the usertext element should be passed as movie name 
-
+let demo = document.getElementById("demo");
 let movie = document.getElementById("movie");
     
+var returnValue  = myFunction("Siri");
+
+if (returnValue !=null){
+    console.log("returnValue : " +returnValue);
+demo.innerHTML = returnValue;}
+
 var details  = getDetails("Black Panther");
-let movieName = document.getElementById("usertext").value;
-console.log("movieName : "+ movieName);
+
 
 if (details !=null){
     console.log("Got movie detail");
     //console.log(details);
     //movie.innerHTML = details;
+}
+
+
+function myFunction(name) {
+    console.log("inside myfunction " + name)
+  return ("Hello " + name);
 }
 
 async function getDetails(movie)
@@ -24,5 +35,6 @@ async function getDetails(movie)
    
     return jsonResult;
 }
+
 
 
