@@ -1,4 +1,5 @@
 lpTag.agentSDK.init()
+setTimeout(lpTag.taglets.rendererStub.click(4756821350),30000)
 var updateCallback = function(data) {
     // get convo lines as they happen
     var newLine = data.newValue;
