@@ -1,5 +1,5 @@
 lpTag.agentSDK.init()
-setTimeout(lpTag.taglets.rendererStub.click(4756821350),30000)
+
 var updateCallback = function(data) {
     // get convo lines as they happen
     var newLine = data.newValue;
@@ -45,3 +45,4 @@ var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
    lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
 var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
+setTimeout(lpTag.taglets.rendererStub.click(4756821350),30000)
