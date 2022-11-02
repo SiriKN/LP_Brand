@@ -20,7 +20,8 @@ var updateCallback = function(data) {
                 fetch(url,{method:'POST'})
                 .then((response)=>response.json())
                 .then((details)=>{
-                    movie.innerHTML = details.Title;
+                    movie.innerHTML = "Title: "+ details.Title +"<br> IMDB Rating: "+details.imdbRating+ "<br>Actors: " + details.Actors;
+
                     console.log(details);
                 
                 });
