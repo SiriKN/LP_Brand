@@ -38,11 +38,40 @@ var notifyWhenDone = function(err) {
     console.log("set the value");
 };
 
-var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
 
-   var data = {text: "Some text"};
-
-   lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
-var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
+
+
+////////////////////////////////
 //setTimeout(lpTag.taglets.rendererStub.click(4756821350),30000)
+
+////
+
+
+let movie = document.getElementById("movie");
+
+let movieName = document.getElementById("usertext").value;
+console.log("movieName : "+ movieName);
+
+if(movieName == null)
+{
+    movieName = "Black Panther";
+}
+let url = "http://www.omdbapi.com?apikey=ccae0820&type=movie&t=" + movieName + "&r=json";
+
+
+const result= fetch(url,{method:'POST'})
+.then((response)=>response.json())
+.then((details)=>{
+    movie.innerHTML = details.Title;
+    console.log(details);
+    return details;
+});
+
+var cmdName = lpTag.agentSDK.cmdNames.writeSC; // = "Write ChatLine"lpTag.agentSDK.cmdNames.writeSC
+
+   //var data = {text: "Some text"};
+
+   lpTag.agentSDK.command(cmdName, result, notifyWhenDone);
+var pathToData = "chatTranscript.lines";
+
