@@ -45,7 +45,7 @@ var notifyWhenDone = function(err) {
 ////////////////////////////////
 //setTimeout(lpTag.taglets.rendererStub.click(4756821350),30000)
 
-////
+/*
 
 
 let movie = document.getElementById("movie");
@@ -67,8 +67,8 @@ const result= fetch(url,{method:'POST'})
     console.log(details);
     return details;
 });
-
-var cmdName = lpTag.agentSDK.cmdNames.writeSC; // = "Write ChatLine"lpTag.agentSDK.cmdNames.writeSC
+*/
+var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"lpTag.agentSDK.cmdNames.writeSC
 
    //var data = {text: "Some text"};
 
