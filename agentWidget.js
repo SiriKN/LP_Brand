@@ -39,7 +39,7 @@ var notifyWhenDone = function(err) {
 };
 
 
-lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
+
 
 
 ////////////////////////////////
@@ -74,4 +74,6 @@ var cmdName = lpTag.agentSDK.cmdNames.writeSC; // = "Write ChatLine"lpTag.agentS
 
    lpTag.agentSDK.command(cmdName, result, notifyWhenDone);
 var pathToData = "chatTranscript.lines";
+
+lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
 
