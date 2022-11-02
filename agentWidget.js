@@ -10,7 +10,7 @@ var updateCallback = function(data) {
     if (newLine[0].by == "Visitor") {
         usertext.innerHTML = newLine[0].text;
         console.log('setting visitor text' +newLine[0].text);
-        let url = "http://www.omdbapi.com?apikey=ccae0820&type=movie&t=" + movieName + "&r=json";
+        let url = "https://www.omdbapi.com?apikey=ccae0820&type=movie&t=" + movieName + "&r=json";
 
         fetch(url,{method:'POST'})
         .then((response)=>response.json())
