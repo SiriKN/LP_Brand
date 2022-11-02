@@ -12,6 +12,7 @@ var updateCallback = function(data) {
         console.log('setting visitor text' +newLine[0].text);
         let url = "https://www.omdbapi.com?apikey=ccae0820&type=movie&t=" + movieName + "&r=json";
 
+    try{
         fetch(url,{method:'POST'})
         .then((response)=>response.json())
         .then((details)=>{
@@ -19,6 +20,11 @@ var updateCallback = function(data) {
             console.log(details);
         
         });
+    }
+    catch(e)
+    {
+        console.log('error from catch : e'+e);
+    }
 
     }
     var ccs = document.getElementById("ccs");
