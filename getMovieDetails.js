@@ -1,5 +1,6 @@
 
 // value in the usertext element should be passed as movie name 
+lpTag.agentSDK.init()
 
 let movie = document.getElementById("movie");
 

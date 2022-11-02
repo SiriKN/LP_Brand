@@ -8,9 +8,6 @@ var updateCallback = function(data) {
     if (newLine[0].by == "Visitor") {
         usertext.innerHTML = newLine[0].text;
         console.log('setting visitor text');
-    } else {
-        agenttext.innerHTML = newLine[0].text;
-        console.log('setting agent text');
     }
     var ccs = document.getElementById("ccs");
     var ccsData = ccs.innerHTML;
@@ -38,11 +35,12 @@ var notifyWhenDone = function(err) {
     console.log("set the value");
 };
 
-var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
+/*var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
 
    var data = {text: "Some text"};
 
-   lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
+   lpTag.agentSDK.command(cmdName, data, notifyWhenDone);*/
+   
 var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
 //setTimeout(lpTag.taglets.rendererStub.click(4756821350),30000)
