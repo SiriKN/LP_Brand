@@ -4,10 +4,22 @@ var updateCallback = function(data) {
     // get convo lines as they happen
     var newLine = data.newValue;
     let usertext = document.getElementById("usertext");
-    let agenttext = document.getElementById("agenttext");
+    let movie = document.getElementById("movie");
+    let movieName = "Black Panther";
+
     if (newLine[0].by == "Visitor") {
         usertext.innerHTML = newLine[0].text;
-        console.log('setting visitor text');
+        console.log('setting visitor text' +newLine[0].text);
+        let url = "http://www.omdbapi.com?apikey=ccae0820&type=movie&t=" + movieName + "&r=json";
+
+        fetch(url,{method:'POST'})
+        .then((response)=>response.json())
+        .then((details)=>{
+            movie.innerHTML = details.Title;
+            console.log(details);
+        
+        });
+
     }
     var ccs = document.getElementById("ccs");
     var ccsData = ccs.innerHTML;
@@ -35,12 +47,7 @@ var notifyWhenDone = function(err) {
     console.log("set the value");
 };
 
-/*var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
 
-   var data = {text: "Some text"};
-
-   lpTag.agentSDK.command(cmdName, data, notifyWhenDone);*/
-   
 var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
 //setTimeout(lpTag.taglets.rendererStub.click(4756821350),30000)
