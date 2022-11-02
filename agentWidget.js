@@ -45,4 +45,4 @@ var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
    lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
 var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
-setTimeout(lpTag.taglets.rendererStub.click(4756821350),30000)
+//setTimeout(lpTag.taglets.rendererStub.click(4756821350),30000)
