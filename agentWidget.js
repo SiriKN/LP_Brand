@@ -6,8 +6,8 @@ var updateCallback = function(data) {
     let usertext = document.getElementById("usertext");
     let movie = document.getElementById("movie");
     let movieName = "Black Panther";
-
-    if (newLine[0].by == "Visitor") {
+    console.log('+++newline ' +JSON.stringify(newLine));
+    if ((newLine[0].by == "Visitor") || (newLine[0].by == "John Smith")) {
         usertext.innerHTML = newLine[0].text;
         movieName = newLine[0].text;
         console.log('setting visitor text ' +movieName);
@@ -62,5 +62,4 @@ var notifyWhenDone = function(err) {
 
 var pathToData = "chatTranscript.lines";
 lpTag.agentSDK.bind(pathToData, updateCallback, notifyWhenDone);
-//setTimeout(lpTag.taglets.rendererStub.click(4756821350),30000)
 
