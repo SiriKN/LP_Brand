@@ -12,10 +12,52 @@
         
         <script> 
             window.lpTag = window.lpTag || {};
+            lpTag.sdes = lpTag.sdes||[];
+            lpTag.identities =[];
             lpTag.section = ['lpbrand','needhelp'];
+
+            lpTag.sdes.push(
+            {
+                "type": "cart", 
+                "total": 11.7, 
+                "Currency": "USD" 
+            },
+            {
+                "type": "personal", 
+                "personal": {
+                    "firstname": "John", 
+                    "lastname": "Doe",
+                    "contacts": [{
+                    "email": "john.doe@lpbrand.com", 
+                    "phone": "+1 212-788-8877", 
+                    }],
+                    "gender": "MALE", 
+                    "language": "en-US", 
+                    "company": "LP_Brand" 
+                }
+            }
+            );
+            lpTag.identities.push(identityFn);
+            function identityFn(callback)
+            {
+                callback({
+                iss:"pocapp",
+                acr:"loa1",
+                sub:"WebMsgTest1245"
+            });
+            }
+
+            function LPJsGetToken(callback)
+            {
+
+            console.log("**from the function LPJsGetToken");
+            const generatedJwt="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTQyNDExMzIsImlhdCI6MTY2Nzg0MTEzMiwiaXNzIjoiaHR0cHM6Ly9zaXJpLXRlc3QuY28udWsiLCJscF9zZGVzIjpbeyJpbmZvIjp7ImFjY291bnROYW1lIjoiYmFuayBjb3JwIiwiYmFsYW5jZSI6LTQwMC45OSwiY29tcGFueUJyYW5jaCI6IkJyb2FkYmFuZCIsImNvbXBhbnlTaXplIjo1MDAsImNzdGF0dXMiOiJjYW5jZWxsZWQiLCJjdHlwZSI6InZpcCIsImN1cnJlbmN5IjoiVVNEIiwiY3VzdG9tZXJJZCI6IjEzODc2NkFDIiwiaW1laSI6IjEyMzQ1Njc4OTAxMjM0NSIsImxhc3RQYXltZW50RGF0ZSI6eyJkYXkiOjE1LCJtb250aCI6MTAsInllYXIiOjIwMTR9LCJyZWdpc3RyYXRpb25EYXRlIjp7ImRheSI6MjMsIm1vbnRoIjo1LCJ5ZWFyIjoyMDEzfSwicm9sZSI6ImJyb2tlciIsInNvY2lhbElkIjoiMTEyNTYzMjQ3ODAiLCJzdG9yZU51bWJlciI6IjEyMzg2NSIsInN0b3JlWmlwQ29kZSI6IjIwNTA1IiwidXNlck5hbWUiOiJ1c2VyMDAwIn0sInR5cGUiOiJjdG1yaW5mbyJ9LHsicGVyc29uYWwiOnsiYWdlIjp7ImFnZSI6MzQsImRheSI6MTUsIm1vbnRoIjo0LCJ5ZWFyIjoxOTgwfSwiY29tcGFueSI6ImNvbXBhbnkiLCJjb250YWN0cyI6W3siZW1haWwiOiJteW5hbWUxQGV4YW1wbGUuY29tIiwicGhvbmUiOiIwNzAwMDAwMDAwMCJ9XSwiZmlyc3RuYW1lIjoiSm9obiIsImdlbmRlciI6Ik1BTEUiLCJsYW5ndWFnZSI6ImVuLVVTIiwibGFzdG5hbWUiOiJTbWl0aCJ9LCJ0eXBlIjoicGVyc29uYWwifV0sInN1YiI6InNpcmktdGVzdCJ9.c75UkWI79yF-uXGGeJ02klHzNkzpoTs8WBTj2N7crplZ5hwoO02hBtCi3oqXWksU--t-V6AFyVk9mzWjZrCOFCyynHKcgC0jdCLfndB7ROu98aPSkbLcOaD96J5asyfTpK8zjjuE4wnXs6Hp0IFJeiQBevHGsydx30v_5_k4Xm9eNQqFo9EDYSpmTChZCJHAeXRjCfKK3eRWJMJ25SrCGr58qPLhRumXvVzb0qhE-rVGAIBy98DxQUcO8X8vbX57YxGCthHPv4eNufgs0ZXk2JPGfQXMI_14YF1chIz9oJjRJk05cK10IrDf_5MVmoLs_1mPTKK5ZF-H1QL-V6y7Tg";
+            callback(generatedJwt);
+            }
+
             
         </script>
-        <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
+        <!--script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script-->
     
     </head>
     <body>
